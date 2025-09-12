@@ -21,22 +21,23 @@ const Header = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     emailjs.send(
-      'service_fias7ug',      // Replace with your EmailJS service ID
-      'template_jlicp2v',     // Replace with your EmailJS template ID
+      'service_02tgjgf', // Your EmailJS service ID
+      'template_jlicp2v', // Your EmailJS template ID
       {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email :'rs8317594@gmail.com',
+        name: formData.name,      // matches {{name}} in template
+        email: formData.email,    // matches {{email}} in template
+        title: "Contact",         // matches {{title}} in template
+        message: formData.message // matches {{message}} in template
       },
-      'public_APX57tKGmwi2WkyUH'          // Replace with your EmailJS user ID
-    ).then(() => {
-      setFormData({ name: '', email: '', message: '' });
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 2000);
-    }, (error) => {
-      alert('Failed to send message. Please try again.');
-    });
+      'APX57tKGmwi2WkyUH' // Your EmailJS public key
+    )
+      .then(() => {
+        setFormData({ name: '', email: '', message: '' });
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 2000);
+      }, (error) => {
+        alert('Failed to send message. Please try again.');
+      });
   };
 
   return (

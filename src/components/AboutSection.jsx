@@ -110,7 +110,7 @@ const AboutSection = () => {
                         I'm all about clean code, fast delivery, and seamless user experiences.
                 </h3>
                 <div className="flex flex-col items-center">
-                    <img className="lg:h-[40rem] md:h-[25rem] h-[20rem] mix-blend-lighten" src="/public/images/Person.png" alt="profile-img" />
+                    <img className="lg:h-[40rem] md:h-[25rem] h-[20rem] mix-blend-lighten" src="/images/Person.png" alt="profile-img" />
                 </div>
      </div>
     </section>
